@@ -11,6 +11,7 @@ pipeline {
         stage('Parallel_1') {
           steps {
             echo 'Parallel_1 output'
+            sh 'env | sort'
           }
         }
 
@@ -30,5 +31,9 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    VAR1 = 'value1'
+    VAR2 = 'value2'
   }
 }
