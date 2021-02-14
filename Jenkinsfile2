@@ -16,8 +16,12 @@ pipeline {
       parallel {
         stage('Clone repo') {
           steps {
+            echo 'Checkout git repo'
             git 'https://github.com/oisis/ansible-virtualenv.git'
           }
+        }
+        stage('Print env') {
+          sh 'env | sort'
         }
       }
     }
