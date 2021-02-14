@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('echo') {
+    stage('Stage one') {
       parallel {
         stage('Parallel_1') {
           steps {
@@ -23,10 +23,10 @@ pipeline {
       }
     }
 
-    stage('Stage 2') {
+    stage('Stage two') {
       steps {
-        sh 'echo "Stage in the front of echo"'
-        echo 'Step 2 in stage 2'
+        sh 'echo "Stage 2 - shell script"'
+        echo 'Step 2, stage two, print message'
       }
     }
 
