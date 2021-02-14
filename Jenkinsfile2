@@ -9,7 +9,7 @@ pipeline {
     VAR2 = 'value2'
   }
   triggers {
-    cron('* * * * *')
+    cron('H/1 * * * *')
   }
   stages {
     stage('Preparation') {
