@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    node {
-      label 'master'
+    docker {
+      image 'python'
     }
 
   }
@@ -26,7 +26,7 @@ echo "test"'''
 
     stage('Stage two') {
       steps {
-        sh 'sudo apt install python-virtualenv libssl-dev'
+        sh 'apt install python-virtualenv libssl-dev'
       }
     }
 
