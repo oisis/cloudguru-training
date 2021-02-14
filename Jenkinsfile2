@@ -9,7 +9,7 @@ pipeline {
     VAR2 = 'value2'
   }
   triggers {
-    cron('H/1 * * * *')
+    cron('* * * * *')
   }
   stages {
     stage('Preparation') {
@@ -25,11 +25,14 @@ pipeline {
         }
       }
     }
-    stage('Do something') {
+    stage('Build') {
       steps {
        echo "Show files"
        sh 'ls -al ./'
       }
+    }
+    stage('Deploy') {
+      echo "Deploying to SIT env"
     }
   }
 
