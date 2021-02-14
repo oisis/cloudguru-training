@@ -12,7 +12,7 @@ pipeline {
     cron('H/1 * * * *')
   }
   stages {
-    stage('Stage one') {
+    stage('Preparation') {
       parallel {
         stage('Clone repo') {
           steps {
@@ -27,7 +27,8 @@ pipeline {
     }
     stage('Do something') {
       steps {
-       echo "Stage 2"
+       echo "Show files"
+       sh 'ls -al ./'
       }
     }
   }
