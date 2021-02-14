@@ -26,8 +26,7 @@ echo "test"'''
 
     stage('Stage two') {
       steps {
-        sh 'ls -al ./'
-        sh 'apt install python-virtualenv libssl-dev'
+        sh 'sudo apt install python-virtualenv libssl-dev'
       }
     }
 
