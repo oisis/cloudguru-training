@@ -35,4 +35,9 @@ echo "test"'''
     VAR1 = 'value1'
     VAR2 = 'value2'
   }
+  post { 
+    always { 
+      cleanWs()
+    }
+  }
 }
