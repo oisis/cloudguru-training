@@ -19,11 +19,15 @@ pipeline {
             git 'https://github.com/oisis/ansible-virtualenv.git'
           }
         }
-
       }
     }
-
+    stage('Do something') {
+      steps {
+       echo "Stage 2"
+      }
+    }
   }
+
   post { 
     always { 
       cleanWs()
