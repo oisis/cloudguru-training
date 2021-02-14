@@ -1,0 +1,32 @@
+pipeline {
+  agent {
+    docker {
+      image 'python'
+    }
+
+  }
+  stages {
+    stage('Stage one') {
+      parallel {
+        stage('Clone repo') {
+          steps {
+            git 'https://github.com/oisis/ansible-virtualenv.git'
+          }
+        }
+
+        stage('Parallel_2') {
+          steps {
+            sh '''mkdir ./output
+echo "test"'''
+          }
+        }
+
+      }
+    }
+
+  }
+  environment {
+    VAR1 = 'value1'
+    VAR2 = 'value2'
+  }
+}
