@@ -32,7 +32,9 @@ pipeline {
       }
     }
     stage('Deploy') {
-      echo "Deploying to SIT env"
+      steps {
+        echo "Deploying to SIT env"
+      }
     }
   }
 
