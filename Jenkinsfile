@@ -33,7 +33,7 @@ pipeline {
 
     stage('Stage three') {
       steps {
-        git 'git@github.com/ansible-virtualenv'
+        git 'https://github.com/oisis/ansible-virtualenv.git'
       }
     }
 
