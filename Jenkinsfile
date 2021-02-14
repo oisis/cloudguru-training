@@ -30,11 +30,5 @@ pipeline {
       }
     }
 
-    stage('Prepare') {
-      steps {
-        git(url: 'https://github.com/oisis/cloudguru-training', credentialsId: 'testuser1')
-      }
-    }
-
   }
 }
