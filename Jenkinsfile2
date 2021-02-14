@@ -4,6 +4,9 @@ pipeline {
       label "master"
     }
   }
+  triggers {
+    cron('H/1 * * * *')
+  }
   stages {
     stage('Stage one') {
       parallel {
