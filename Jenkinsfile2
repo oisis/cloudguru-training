@@ -20,13 +20,6 @@ pipeline {
           }
         }
 
-        stage('Parallel_2') {
-          steps {
-            sh '''mkdir ./output
-            echo "test"'''
-          }
-        }
-
       }
     }
 
