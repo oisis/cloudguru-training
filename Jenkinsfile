@@ -10,13 +10,13 @@ pipeline {
       parallel {
         stage('Parallel_1') {
           steps {
-            echo 'hello'
+            echo 'Parallel_1 output'
           }
         }
 
         stage('Parallel_2') {
           steps {
-            sh 'echo "Stage below echo"'
+            sh 'echo "Parallel 2 echo output"'
           }
         }
 
@@ -27,6 +27,12 @@ pipeline {
       steps {
         sh 'echo "Stage in the front of echo"'
         echo 'Step 2 in stage 2'
+      }
+    }
+
+    stage('Prepare') {
+      steps {
+        git(url: 'https://github.com/oisis/cloudguru-training', credentialsId: 'testuser1')
       }
     }
 
