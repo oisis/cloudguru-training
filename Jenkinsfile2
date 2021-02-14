@@ -4,6 +4,10 @@ pipeline {
       label "master"
     }
   }
+  environment {
+    VAR1 = 'value1'
+    VAR2 = 'value2'
+  }
   triggers {
     cron('H/1 * * * *')
   }
@@ -27,8 +31,9 @@ echo "test"'''
     }
 
   }
-  environment {
-    VAR1 = 'value1'
-    VAR2 = 'value2'
+  post { 
+    always { 
+      cleanWs()
+    }
   }
 }
