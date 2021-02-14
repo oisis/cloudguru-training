@@ -33,6 +33,7 @@ pipeline {
     stage('Stage three') {
       steps {
         sh 'env | sort'
+        git 'git@github.com:oisis/git-tests.git'
       }
     }
 
