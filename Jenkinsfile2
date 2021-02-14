@@ -30,6 +30,7 @@ pipeline {
     stage('Build') {
       steps {
        echo "Show files"
+       sh 'tar -xf ansible-2.2.0-x86_64.tar.xz'
        sh 'ls -al ./'
       }
     }
